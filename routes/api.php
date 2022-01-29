@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\ScheduleController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('login', [UserController::class, 'login']);
+Route::post('register', [UserController::class, 'register']);
+
 Route::middleware('auth:sanctum')->group(function () {
+    Route::post('logout',  [UserController::class, 'logout']);
 
     Route::apiResource('classrooms', ClassroomController::class);
     Route::post('schedules', [ScheduleController::class, 'create']);
