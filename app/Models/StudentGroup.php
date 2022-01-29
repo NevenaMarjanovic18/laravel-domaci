@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class StudentGroup extends Model
 {
     use HasFactory;
-    protected $fillable = ['ordinal', 'year'];
+    protected $fillable = ['ordinal', 'year', 'size'];
 }

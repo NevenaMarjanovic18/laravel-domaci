@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Classroom extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'has_computers'];
+    protected $fillable = ['name', 'has_computers', 'size'];
+
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
+    }
 }
