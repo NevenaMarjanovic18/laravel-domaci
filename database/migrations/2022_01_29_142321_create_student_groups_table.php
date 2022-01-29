@@ -16,7 +16,7 @@ class CreateStudentGroupsTable extends Migration
         Schema::create('student_groups', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('ordinal');
+            $table->string('ordinal');
             $table->integer('year');
         });
     }

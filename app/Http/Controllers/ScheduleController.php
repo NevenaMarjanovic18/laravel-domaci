@@ -29,6 +29,6 @@ class ScheduleController extends Controller
             'student_group_id' => $request->group_id,
             'classroom_id' => $request->classroom_id
         ]);
-        return response()->json(Schedule::find($schedule->id));
+        return response()->json($schedule);
     }
 }
