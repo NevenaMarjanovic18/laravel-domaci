@@ -13,8 +13,13 @@ class ScheduleFactory extends Factory
      */
     public function definition()
     {
+        $days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
         return [
-            //
+            'day' => $days[$this->faker->numberBetween(0, 4)],
+            'from' => $this->faker->time('hh:mm:ss'),
+            'to' => $this->faker->time('hh:mm:ss'),
+            'student_group_id' => $this->faker->numberBetween(1, 8),
+            'classroom_id' => $this->faker->numberBetween(1, 15)
         ];
     }
 }

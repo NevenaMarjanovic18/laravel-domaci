@@ -13,8 +13,12 @@ class StudentGroupFactory extends Factory
      */
     public function definition()
     {
+        $year = $this->faker->numberBetween(1, 4);
+        $yearLetters = ['A', 'B', 'C', 'D'];
         return [
-            //
+            'ordinal' => $yearLetters[$year - 1] . $this->faker->unique()->numberBetween(1, 12),
+            'year' => $year,
+            'size' => $this->faker->numberBetween(30, 70)
         ];
     }
 }
