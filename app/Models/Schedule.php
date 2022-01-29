@@ -9,9 +9,9 @@ class Schedule extends Model
 {
     use HasFactory;
     protected $fillable = ['day', 'from', 'to', 'student_group_id', 'classroom_id'];
-
+    protected $with = ['group'];
     public function group()
     {
-        return $this->hasMany(StudentGroup::class);
+        return $this->belongsTo(StudentGroup::class);
     }
 }
